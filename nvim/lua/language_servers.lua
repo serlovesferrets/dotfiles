@@ -42,6 +42,11 @@ lspconfig.pyright.setup({
     capabilities = capabilities,
 })
 
+-- Gdscript
+lspconfig.gdscript.setup({
+    capabilities = capabilities,
+})
+
 -- Haskell
 lspconfig.hls.setup({
     capabilities = capabilities,
