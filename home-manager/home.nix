@@ -19,6 +19,9 @@
       pkgs.ripgrep
       pkgs.gh
 
+      ## I'm sorry
+      pkgs.neofetch
+
       # Fish
       pkgs.fish
       pkgs.fishPlugins.tide
@@ -29,24 +32,30 @@
 
       # Language stuff
       pkgs.nil
-      pkgs.nixfmt
+      pkgs.nixpkgs-fmt
 
+      ## Python
       pkgs.python3
       pkgs.black
-      pkgs.conda
       pkgs.nodePackages.pyright
 
-      pkgs.ihaskell
+      ## Haskell
+      pkgs.ghc
       pkgs.cabal-install
       pkgs.haskell-language-server
 
+      ## Java
       pkgs.jdk21
       pkgs.gradle
-      pkgd.jdt-language-server
+      pkgs.jdt-language-server
+
+      ## Lua
+      pkgs.lua-language-server
+      pkgs.stylua
     ];
 
-    file = {};
-    sessionVariables = {};
+    file = { };
+    sessionVariables = { };
   };
 
   programs.fish = {
@@ -55,7 +64,7 @@
       set fish_greeting # Disable greeting
 
       fish_vi_key_bindings # Vi mode
-      '';
+    '';
   };
 
   programs.zsh = {

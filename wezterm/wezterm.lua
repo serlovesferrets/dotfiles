@@ -56,7 +56,7 @@ config.keys = {
 }
 
 config.font = wezterm.font("Cascadia Code")
-config.font_size = 12
+config.font_size = 14
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true

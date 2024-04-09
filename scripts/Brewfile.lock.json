@@ -36,6 +36,12 @@
         "options": {
           "full_name": "telegram"
         }
+      },
+      "whatsapp": {
+        "version": "2.24.6.79",
+        "options": {
+          "full_name": "whatsapp"
+        }
       }
     }
   },
