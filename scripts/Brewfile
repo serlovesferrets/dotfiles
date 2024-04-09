@@ -2,8 +2,9 @@
 cask "duckduckgo"
 
 # Messagging
-# cask "telegram"
+cask "telegram"
 cask "discord"
+cask "whatsapp"
 
 # GUI stuff for development
 cask "raycast"

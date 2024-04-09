@@ -30,6 +30,12 @@
         "options": {
           "full_name": "godot"
         }
+      },
+      "telegram": {
+        "version": "10.10.2,261795",
+        "options": {
+          "full_name": "telegram"
+        }
       }
     }
   },
