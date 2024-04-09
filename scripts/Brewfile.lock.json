@@ -1,0 +1,48 @@
+{
+  "entries": {
+    "cask": {
+      "duckduckgo": {
+        "version": "1.82.0,152",
+        "options": {
+          "full_name": "duckduckgo"
+        }
+      },
+      "discord": {
+        "version": "0.0.299",
+        "options": {
+          "full_name": "discord"
+        }
+      },
+      "raycast": {
+        "version": "1.70.3",
+        "options": {
+          "full_name": "raycast"
+        }
+      },
+      "wezterm": {
+        "version": "20240203-110809,5046fc22",
+        "options": {
+          "full_name": "wezterm"
+        }
+      },
+      "godot": {
+        "version": "4.2.1",
+        "options": {
+          "full_name": "godot"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "sonoma": {
+        "HOMEBREW_VERSION": "4.2.17",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "15.3.0.0.1.1708646388",
+        "Xcode": "15.1",
+        "macOS": "14.4.1"
+      }
+    }
+  }
+}

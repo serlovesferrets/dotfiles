@@ -1,9 +1,11 @@
-tap "homebrew/cask"
+# Browser
+cask "duckduckgo"
 
 # Messagging
-cask "telegram"
+# cask "telegram"
 cask "discord"
 
 # GUI stuff for development
+cask "raycast"
 cask "wezterm"
 cask "godot"
