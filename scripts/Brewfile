@@ -1,0 +1,9 @@
+tap "homebrew/cask"
+
+# Messagging
+cask "telegram"
+cask "discord"
+
+# GUI stuff for development
+cask "wezterm"
+cask "godot"
