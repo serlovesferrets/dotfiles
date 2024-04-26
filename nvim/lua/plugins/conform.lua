@@ -5,7 +5,6 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
             python = { "black" },
-            nix = {"nixpkgs_fmt"}
         },
     },
     keys = {

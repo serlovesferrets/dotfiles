@@ -20,11 +20,11 @@ vim.opt.showmode = false
 
 -- invisible characters
 vim.opt.listchars = {
-	tab = "⬝··",
-	lead = "·",
-	space = "·",
-	multispace = "····",
-	leadmultispace = "⬝···",
+    tab = "↠··",
+    lead = "·",
+    space = "·",
+    multispace = "····",
+    leadmultispace = "⬝···",
 }
 
 vim.opt.list = true

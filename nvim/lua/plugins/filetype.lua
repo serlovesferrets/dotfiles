@@ -13,10 +13,12 @@ return {
     "nathom/filetype.nvim",
     lazy = false,
     opts = {
-        function_extensions = {
-            ["hs"] = function()
-                set_tab_width("haskell", 2)
-            end,
+        overrides = {
+            function_extensions = {
+                ["hs"] = function()
+                    set_tab_width("haskell", 2)
+                end,
+            },
         },
     },
 }

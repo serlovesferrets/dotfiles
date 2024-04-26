@@ -14,7 +14,6 @@
 
     packages = [
       # Coding tools
-      pkgs.neovim
       pkgs.tmux
       pkgs.ripgrep
       pkgs.gh
@@ -31,6 +30,8 @@
       pkgs.cascadia-code
 
       # Language stuff
+
+      ## Nix
       pkgs.nil
       pkgs.nixpkgs-fmt
 
@@ -44,6 +45,9 @@
       pkgs.cabal-install
       pkgs.haskell-language-server
 
+      ## Lean
+      pkgs.lean4
+
       ## Java
       pkgs.jdk21
       pkgs.gradle
@@ -52,6 +56,15 @@
       ## Lua
       pkgs.lua-language-server
       pkgs.stylua
+
+      ## Rust
+      pkgs.cargo
+      pkgs.rustc
+      pkgs.rustfmt
+      pkgs.rust-analyzer
+      pkgs.cargo-binstall
+      pkgs.cargo-watch
+      pkgs.cargo-make
     ];
 
     file = { };
@@ -62,6 +75,10 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+
+      fish_add_path $HOME/.config/scripts/
+
+      alias home-update "home-manager build && home-manager switch"
 
       fish_vi_key_bindings # Vi mode
     '';

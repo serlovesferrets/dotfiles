@@ -1,7 +1,6 @@
 local lspconfig = require("lspconfig")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 -- Lua
 lspconfig.lua_ls.setup({
     capabilities = capabilities,
@@ -42,23 +41,8 @@ lspconfig.pyright.setup({
     capabilities = capabilities,
 })
 
--- Gdscript
-lspconfig.gdscript.setup({
-    capabilities = capabilities,
-})
-
 -- Haskell
 lspconfig.hls.setup({
     capabilities = capabilities,
     filetypes = { "haskell", "cabal" },
-})
-
--- Nix
-lspconfig.nil_ls.setup({
-    capabilities = capabilities,
-})
-
--- Java
-lspconfig.jdtls.setup({
-    capabilities = capabilities,
 })

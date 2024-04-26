@@ -9,4 +9,11 @@ cask "whatsapp"
 # GUI stuff for development
 cask "raycast"
 cask "wezterm"
-cask "godot"
+cask "godot-mono"
+cask "dotnet-sdk"
+
+# Notes
+cask "obsidian"
+
+# Playing stuff
+cask "melonds"
