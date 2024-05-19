@@ -1,0 +1,90 @@
+{
+  "entries": {
+    "cask": {
+      "arc": {
+        "version": "1.40.1,49250",
+        "options": {
+          "full_name": "arc"
+        }
+      },
+      "bitwarden": {
+        "version": "2024.4.1",
+        "options": {
+          "full_name": "bitwarden"
+        }
+      },
+      "telegram": {
+        "version": "10.12,262578",
+        "options": {
+          "full_name": "telegram"
+        }
+      },
+      "discord": {
+        "version": "0.0.302",
+        "options": {
+          "full_name": "discord"
+        }
+      },
+      "whatsapp": {
+        "version": "2.24.6.79",
+        "options": {
+          "full_name": "whatsapp"
+        }
+      },
+      "raycast": {
+        "version": "1.72.1",
+        "options": {
+          "full_name": "raycast"
+        }
+      },
+      "wezterm": {
+        "version": "20240203-110809,5046fc22",
+        "options": {
+          "full_name": "wezterm"
+        }
+      },
+      "godot": {
+        "version": "4.2.2",
+        "options": {
+          "full_name": "godot"
+        }
+      },
+      "krita": {
+        "version": "5.2.2",
+        "options": {
+          "full_name": "krita"
+        }
+      },
+      "docker": {
+        "version": "4.29.0,145265",
+        "options": {
+          "full_name": "docker"
+        }
+      },
+      "sf-symbols": {
+        "version": "5.1",
+        "options": {
+          "full_name": "sf-symbols"
+        }
+      },
+      "obsidian": {
+        "version": "1.5.12",
+        "options": {
+          "full_name": "obsidian"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "sonoma": {
+        "HOMEBREW_VERSION": "4.2.19",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "15.3.0.0.1.1708646388",
+        "Xcode": "15.1",
+        "macOS": "14.4.1"
+      }
+    }
+  }
+}

@@ -40,3 +40,7 @@ alt + shift - 6 : yabai -m window --space 6
 
 alt + shift - n : yabai -m space --focus next || yabai -m space --focus first
 alt + shift - p : yabai -m space --focus prev || yabai -m space --focus last
+
+alt + shift - f : /Users/ser/.config/skhd/toggle_fullscreen.sh
+alt + shift - r : yabai -m space --toggle padding; yabai -m space --toggle gap
+

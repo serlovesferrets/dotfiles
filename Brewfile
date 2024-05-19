@@ -1,5 +1,6 @@
 # Browser
-cask "duckduckgo"
+cask "arc"
+cask "bitwarden"
 
 # Messagging
 cask "telegram"
@@ -9,11 +10,10 @@ cask "whatsapp"
 # GUI stuff for development
 cask "raycast"
 cask "wezterm"
-cask "godot-mono"
-cask "dotnet-sdk"
+cask "godot"
+cask "krita"
+cask "docker"
+cask "sf-symbols"
 
 # Notes
 cask "obsidian"
-
-# Playing stuff
-cask "melonds"

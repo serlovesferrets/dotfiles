@@ -13,21 +13,10 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- stop buffer from jiggling
-vim.o.signcolumn = "number"
+vim.opt.signcolumn = "number"
 
 -- hide the current mode from the statusline
 vim.opt.showmode = false
-
--- invisible characters
-vim.opt.listchars = {
-    tab = "↠··",
-    lead = "·",
-    space = "·",
-    multispace = "····",
-    leadmultispace = "⬝···",
-}
-
-vim.opt.list = true
 
 -- concealing
 vim.opt.conceallevel = 2
@@ -43,7 +32,7 @@ vim.opt.smartindent = true
 vim.opt.splitright = true
 
 -- top and bottom padding
-vim.opt.scrolloff = 12
+vim.opt.scrolloff = 8
 
 -- no swapfiles
 vim.opt.swapfile = false

@@ -1,6 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 -- Lua
 lspconfig.lua_ls.setup({
     capabilities = capabilities,
@@ -22,6 +23,7 @@ lspconfig.lua_ls.setup({
                     checkThirdParty = false,
                     library = {
                         vim.env.VIMRUNTIME,
+                        "${3rd}/love2d/library",
                         -- other libs
                     },
                 },
@@ -36,8 +38,23 @@ lspconfig.lua_ls.setup({
     },
 })
 
+-- Nix
+lspconfig.nixd.setup({
+    capabilities = capabilities,
+})
+
 -- Python
 lspconfig.pyright.setup({
+    capabilities = capabilities,
+})
+
+-- C
+lspconfig.clangd.setup({
+    capabilities = capabilities,
+})
+
+-- Rust
+lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
 })
 
@@ -45,4 +62,66 @@ lspconfig.pyright.setup({
 lspconfig.hls.setup({
     capabilities = capabilities,
     filetypes = { "haskell", "cabal" },
+})
+
+-- OCaml
+lspconfig.ocamllsp.setup({
+    capabilities = capabilities,
+})
+
+-- JavaScript / TypeScript
+lspconfig.tsserver.setup({
+    capabilities = capabilities,
+})
+
+lspconfig.eslint.setup({
+    capabilities = capabilities,
+})
+
+-- Tailwind
+lspconfig.tailwindcss.setup({
+    capabilities = capabilities,
+})
+
+local web_capabilities = vim.lsp.protocol.make_client_capabilities()
+web_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+-- HTML
+lspconfig.html.setup({
+    capabilities = capabilities,
+})
+
+-- CSS
+lspconfig.cssls.setup({
+    capabilities = web_capabilities,
+})
+
+-- JSON
+lspconfig.jsonls.setup({
+    capabilities = web_capabilities,
+})
+
+-- Java
+lspconfig.jdtls.setup({
+    capabilities = capabilities,
+})
+
+-- Lean
+lspconfig.leanls.setup({
+    capabilities = capabilities,
+})
+
+-- Go
+lspconfig.gopls.setup({
+    capabilities = capabilities,
+})
+
+-- LaTeX
+lspconfig.texlab.setup({
+    capabilities = capabilities,
+})
+
+-- PHP
+lspconfig.phpactor.setup({
+    capabilities = capabilities,
 })

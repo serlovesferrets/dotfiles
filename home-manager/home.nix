@@ -32,7 +32,7 @@
       # Language stuff
 
       ## Nix
-      pkgs.nil
+      pkgs.nixd
       pkgs.nixpkgs-fmt
 
       ## Python
@@ -65,6 +65,11 @@
       pkgs.cargo-binstall
       pkgs.cargo-watch
       pkgs.cargo-make
+
+      ## LaTeX
+      pkgs.texliveBasic
+      pkgs.texlab
+      pkgs.texlivePackages.pygmentex
     ];
 
     file = { };
@@ -79,6 +84,7 @@
       fish_add_path $HOME/.config/scripts/
 
       alias home-update "home-manager build && home-manager switch"
+      abbr flake "nix flake init --template github:the-nix-way/dev-templates#"
 
       fish_vi_key_bindings # Vi mode
     '';

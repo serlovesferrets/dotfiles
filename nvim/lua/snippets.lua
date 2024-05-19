@@ -28,7 +28,7 @@ local python = {
         i(1, "ClassName"),
         t(":"),
         t({ "", "    " }),
-        i(2, "pass")
+        i(2, "pass"),
     }),
     s("lc", {
         t("["),
@@ -39,8 +39,36 @@ local python = {
         i(1, "elts"),
         t(" if "),
         i(4, "True"),
-        t("]")
-    })
+        t("]"),
+    }),
+}
+
+local lua = {
+    s("lsp", {
+        t("lspconfig."),
+        i(1, "lsp_name"),
+        t(".setup({"),
+        t({ "", "    capabilities = capabilities" }),
+        t({ "", "})" }),
+    }),
+}
+
+local js = {
+    s("doc", {
+        t("/**"),
+        t({ "", " * " }),
+        i(1),
+        t({ "", " */" }),
+    }),
+}
+
+local nix = {
+    s("unstable", {
+        t("github:NixOS/nixpkgs/nixos-unstable"),
+    }),
 }
 
 ls.add_snippets("python", python)
+ls.add_snippets("lua", lua)
+ls.add_snippets("javascript", js)
+ls.add_snippets("nix", nix)
