@@ -81,6 +81,14 @@ lspconfig.eslint.setup({
 -- Tailwind
 lspconfig.tailwindcss.setup({
     capabilities = capabilities,
+    filetypes = {
+        "django-html",
+        "htmldjango",
+        "html",
+        "css",
+        "javascriptreact",
+        "typescriptreact",
+    },
 })
 
 local web_capabilities = vim.lsp.protocol.make_client_capabilities()

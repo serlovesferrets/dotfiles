@@ -1,6 +1,5 @@
 return {
     "Pocco81/auto-save.nvim",
-    enabled = false,
     opts = {
         trigger_events = { "InsertLeave", "InsertEnter" },
         execution_message = {
@@ -20,5 +19,14 @@ return {
             local no_utils = utils.not_in(fn.getbufvar(buf, "&filetype"), {})
             return modifiable and no_utils
         end,
+    },
+    keys = {
+        {
+            "<Leader>s",
+            function()
+                vim.cmd([[ASToggle]])
+            end,
+            desc = "Toggle autoformatting"
+        },
     },
 }

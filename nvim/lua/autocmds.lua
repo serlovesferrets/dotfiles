@@ -6,7 +6,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 local indent_size_spaces_fts = {
-    "*.hs",
     "*.ml",
     "*.mli",
     "*.jsx",
@@ -21,5 +20,34 @@ vim.api.nvim_create_autocmd("BufEnter", {
         vim.bo.tabstop = 2
         vim.bo.softtabstop = 2
         vim.bo.shiftwidth = 2
+    end,
+})
+
+local info_ft_group =
+    vim.api.nvim_create_augroup("no_cc_group", { clear = true })
+
+local info_fts = {
+    "*.md*",
+    "*.txt",
+    "*.tex",
+}
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    group = info_ft_group,
+    pattern = info_fts,
+    callback = function()
+        vim.wo.colorcolumn = "0"
+        vim.wo.wrap = true
+        vim.wo.linebreak = true
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufLeave", {
+    group = info_ft_group,
+    pattern = info_fts,
+    callback = function()
+        vim.wo.colorcolumn = "80"
+        vim.wo.wrap = false
+        vim.wo.linebreak = false
     end,
 })

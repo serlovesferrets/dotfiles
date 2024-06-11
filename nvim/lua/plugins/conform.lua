@@ -8,6 +8,7 @@ return {
             javascript = { "prettierd", "prettier" },
             typescript = { "prettierd", "prettier" },
             tex = { "latexindent" },
+            haskell = { "fourmolu" }
         },
     },
     keys = {

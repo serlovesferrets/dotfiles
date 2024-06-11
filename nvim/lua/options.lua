@@ -7,6 +7,7 @@ vim.opt.colorcolumn = "80"
 
 -- use gui colors
 vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 -- prettier search
 vim.opt.hlsearch = false

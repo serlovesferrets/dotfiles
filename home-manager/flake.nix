@@ -14,7 +14,8 @@
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       homeConfigurations."ser" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 

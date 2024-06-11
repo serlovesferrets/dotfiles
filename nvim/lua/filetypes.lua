@@ -6,6 +6,8 @@ vim.filetype.add({
     filename = {
         ["yabairc"] = "bash",
         ["sketchybarrc"] = "bash",
+        ["bordersrc"] = "bash",
+        ["tmux.conf"] = "bash",
 
         ["tsconfig.json"] = "jsonc",
     },

@@ -21,6 +21,18 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.conditions")
 local conds_expand = require("luasnip.extras.conditions.expand")
 
+local general = {
+    s("date", {
+        t(os.date("%Y.%m.%d")),
+    }),
+    s("time", {
+        t(os.date("%H:%M")),
+    }),
+}
+
+ls.add_snippets("markdown", general)
+ls.add_snippets("oil", general)
+
 local python = {
     s("dclass", {
         t("@dataclass"),
@@ -43,6 +55,8 @@ local python = {
     }),
 }
 
+ls.add_snippets("python", python)
+
 local lua = {
     s("lsp", {
         t("lspconfig."),
@@ -53,6 +67,8 @@ local lua = {
     }),
 }
 
+ls.add_snippets("lua", lua)
+
 local js = {
     s("doc", {
         t("/**"),
@@ -62,13 +78,27 @@ local js = {
     }),
 }
 
+ls.add_snippets("javascript", js)
+
 local nix = {
     s("unstable", {
         t("github:NixOS/nixpkgs/nixos-unstable"),
     }),
 }
 
-ls.add_snippets("python", python)
-ls.add_snippets("lua", lua)
-ls.add_snippets("javascript", js)
 ls.add_snippets("nix", nix)
+
+local markdown = {
+    s("i", {
+        t("*"),
+        i(1),
+        t("*"),
+    }),
+    s("b", {
+        t("**"),
+        i(1),
+        t("**"),
+    }),
+}
+
+ls.add_snippets("markdown", markdown)

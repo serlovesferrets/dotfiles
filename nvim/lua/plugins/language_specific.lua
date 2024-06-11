@@ -1,10 +1,15 @@
 return {
-    { "folke/neodev.nvim", opts = {} },
     {
         "lervag/vimtex",
         lazy = false,
         init = function()
-            -- VimTeX configuration goes here
+            vim.g.vimtex_view_method = "skim"
+            vim.g.vimtex_compiler_latexmk_engines = {
+                ["_"] = "-lualatex",
+            }
         end,
+    },
+    {
+        "evesdropper/luasnip-latex-snippets.nvim",
     },
 }
