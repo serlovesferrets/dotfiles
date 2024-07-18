@@ -29,7 +29,7 @@ local info_ft_group =
 local info_fts = {
     "*.md*",
     "*.txt",
-    "*.tex",
+    -- "*.tex",
 }
 
 vim.api.nvim_create_autocmd("BufEnter", {

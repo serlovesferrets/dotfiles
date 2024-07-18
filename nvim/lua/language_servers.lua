@@ -48,9 +48,23 @@ lspconfig.pyright.setup({
     capabilities = capabilities,
 })
 
--- C
+-- C / C++
 lspconfig.clangd.setup({
     capabilities = capabilities,
+})
+
+lspconfig.cmake.setup({
+    capabilities = capabilities,
+})
+
+lspconfig.mesonlsp.setup({
+    capabilities = capabilities,
+    root_dir = lspconfig.util.root_pattern(
+        "meson_options.txt",
+        "meson.options",
+        ".git",
+        "meson.build"
+    ),
 })
 
 -- Rust
@@ -116,6 +130,11 @@ lspconfig.jdtls.setup({
 
 -- Lean
 lspconfig.leanls.setup({
+    capabilities = capabilities,
+})
+
+-- C#
+lspconfig.csharp_ls.setup({
     capabilities = capabilities,
 })
 

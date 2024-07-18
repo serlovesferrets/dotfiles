@@ -14,18 +14,21 @@
 
     packages = with pkgs; [
       # Coding tools
-      tmux
       ripgrep
       gh
       neovim
+      wget
+      zsh
+      pure-prompt
 
-      ## I'm sorry
-      screenfetch
+      # C++
+      meson
+      mesonlsp
 
       # Fish
-      fish
-      fishPlugins.tide
-      fishPlugins.autopair
+      # fish
+      # fishPlugins.tide
+      # fishPlugins.autopair
 
       # My favorite font
       cascadia-code
@@ -35,34 +38,39 @@
       nixpkgs-fmt
 
       ## Lua
+      lua
       lua-language-server
       stylua
+
+      ## LaTeX
+      texliveFull
+      texlab
+      texlivePackages.latexindent
     ];
 
     file = { };
     sessionVariables = { };
   };
 
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-
-      fish_add_path $HOME/.config/scripts/
-
-      abbr flake "nix flake init --template github:the-nix-way/dev-templates#"
-      abbr dev "nix develop -c fish"
-
-      fish_vi_key_bindings # Vi mode
-    '';
-  };
-
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
     initExtra = ''
-      fish
-      exit
+        export CLICOLOR=1
+        export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
     '';
+
+    zplug = {
+      enable = true;
+      plugins = [
+        { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "sindresorhus/pure"; }
+      ];
+    };
+
   };
 
   programs.home-manager.enable = true;

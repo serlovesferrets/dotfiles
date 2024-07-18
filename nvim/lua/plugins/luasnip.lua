@@ -10,6 +10,7 @@ return {
         end
 
         local luasnip = require("luasnip")
+        luasnip.config.setup { enable_autosnippets = true }
 
         vim.keymap.set("i", "<c-j>", function()
             luasnip.jump(1)

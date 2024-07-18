@@ -1,6 +1,5 @@
 # Browser
-cask "arc"
-cask "bitwarden"
+cask "firefox"
 
 # Messagging
 cask "telegram"
@@ -12,8 +11,3 @@ cask "raycast"
 cask "wezterm"
 cask "godot"
 cask "krita"
-cask "docker"
-cask "sf-symbols"
-
-# Notes
-cask "obsidian"

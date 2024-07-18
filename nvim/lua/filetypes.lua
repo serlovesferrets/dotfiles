@@ -10,5 +10,8 @@ vim.filetype.add({
         ["tmux.conf"] = "bash",
 
         ["tsconfig.json"] = "jsonc",
+
+        ["CMakeLists.txt"] = "cmake",
+        ["meson.build"] = "meson"
     },
 })
