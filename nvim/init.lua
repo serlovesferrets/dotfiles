@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 
-require("remaps")
 require("options")
 require("autocmds")
 require("filetypes")
@@ -11,4 +10,4 @@ require("snippets")
 
 vim.cmd.colorscheme("mellow")
 
-vim.api.nvim_set_hl(0, "Comment", { fg = "#FA7CA6", bg = "#310212" })
+vim.api.nvim_set_hl(0, "Comment", { fg = "#b8afcf", bg = "#221d30" })

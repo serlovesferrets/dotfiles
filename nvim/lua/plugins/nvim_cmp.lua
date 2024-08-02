@@ -1,6 +1,14 @@
 return {
     {
         "hrsh7th/nvim-cmp",
+        opts = function(_, opts)
+            opts.sources = opts.sources or {}
+            table.insert(opts.sources, {
+                name = "lazydev",
+                group_index = 0, -- this skips loading LuaLS completions
+            })
+        end,
+
         config = function()
             local cmp = require("cmp")
 
@@ -61,7 +69,6 @@ return {
         end,
     },
     { "hrsh7th/cmp-nvim-lsp" },
-    -- { "/hrsh7th/cmp-nvim-lua" },
     { "hrsh7th/cmp-cmdline" },
     { "hrsh7th/cmp-path" },
     { "saadparwaiz1/cmp_luasnip" },

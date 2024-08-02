@@ -26,7 +26,7 @@ return {
             function()
                 vim.cmd([[ASToggle]])
             end,
-            desc = "Toggle autoformatting"
+            desc = "Toggle autosave"
         },
     },
 }

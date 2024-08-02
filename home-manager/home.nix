@@ -15,20 +15,18 @@
     packages = with pkgs; [
       # Coding tools
       ripgrep
+      fd
       gh
+      lazygit
       neovim
       wget
       zsh
       pure-prompt
 
-      # C++
-      meson
-      mesonlsp
-
-      # Fish
-      # fish
-      # fishPlugins.tide
-      # fishPlugins.autopair
+      # .NET
+      csharp-ls
+      fsautocomplete
+      fantomas
 
       # My favorite font
       cascadia-code
@@ -49,7 +47,7 @@
     ];
 
     file = { };
-    sessionVariables = { };
+    sessionVariables = { EDITOR = "nvim"; };
   };
 
   programs.zsh = {

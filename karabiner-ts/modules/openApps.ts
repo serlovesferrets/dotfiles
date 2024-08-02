@@ -12,6 +12,7 @@ export function openApps() {
             c: toApp("Calendar"), // c
             m: toApp("Mail"), // m
             s: toApp("Reminders"), // r
+            t: toApp("Godot_mono"), // g
         });
 }
 

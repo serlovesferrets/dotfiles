@@ -118,10 +118,16 @@ lspconfig.cssls.setup({
     capabilities = web_capabilities,
 })
 
+local add_if_found = function(lsp_name, lsp_capabilities)
+    if lspconfig[lsp_name] ~= nil then
+        lspconfig[lsp_name].setup({
+            capabilities = lsp_capabilities,
+        })
+    end
+end
+
 -- JSON
-lspconfig.jsonls.setup({
-    capabilities = web_capabilities,
-})
+add_if_found("jsonls", web_capabilities)
 
 -- Java
 lspconfig.jdtls.setup({
@@ -136,6 +142,10 @@ lspconfig.leanls.setup({
 -- C#
 lspconfig.csharp_ls.setup({
     capabilities = capabilities,
+})
+
+lspconfig.fsautocomplete.setup({
+    capabilities = capabilities
 })
 
 -- Go

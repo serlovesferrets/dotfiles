@@ -14,7 +14,8 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- stop buffer from jiggling
-vim.opt.signcolumn = "number"
+-- extra space for gitsigns
+vim.opt.signcolumn = "yes:1"
 
 -- hide the current mode from the statusline
 vim.opt.showmode = false
@@ -41,3 +42,8 @@ vim.opt.backup = false
 
 -- no wrapping around
 vim.opt.wrap = false
+
+-- I use a plugin for inline errors
+vim.diagnostic.config({
+  virtual_text = false,
+})

@@ -1,5 +1,4 @@
 local y_hl = "Conditional"
--- local n_hl = "ModeMsg"
 local n_hl = "WinSeparator"
 
 return {
