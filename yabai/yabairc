@@ -1,0 +1,25 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Exceptions
+yabai -m rule --add app=Finder manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
+yabai -m rule --add title="(DEBUG)" manage=off
+yabai -m rule --add title="Preferences" manage=off
+yabai -m rule --add title="^Telegram$" manage=off
+yabai -m rule --add title="^Discord$" manage=off
+yabai -m rule --add title="^WhatsApp$" manage=off
+
+yabai -m config \
+    layout bsp \
+    window_placement second_child \
+    window_shadow float
+
+PADDING=8
+
+yabai -m config top_padding $PADDING \
+    bottom_padding $PADDING \
+    left_padding $PADDING \
+    right_padding $PADDING \
+    window_gap $PADDING
