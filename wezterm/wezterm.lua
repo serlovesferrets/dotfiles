@@ -72,8 +72,12 @@ config.keys = {
 	},
 }
 
-config.font = wezterm.font("CaskaydiaCove Nerd Font")
+config.font = wezterm.font("CaskaydiaCove Nerd Font", {
+	weight = "DemiLight",
+})
 config.font_size = 14
+config.harfbuzz_features = { "ss19" }
+
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
