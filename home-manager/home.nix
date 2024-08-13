@@ -17,16 +17,14 @@
       ripgrep
       fd
       gh
-      lazygit
       neovim
       wget
+      direnv
       zsh
       pure-prompt
 
       # .NET
       csharp-ls
-      fsautocomplete
-      fantomas
 
       # My favorite font
       cascadia-code
@@ -39,11 +37,6 @@
       lua
       lua-language-server
       stylua
-
-      ## LaTeX
-      texliveFull
-      texlab
-      texlivePackages.latexindent
     ];
 
     file = { };
@@ -59,6 +52,8 @@
     initExtra = ''
         export CLICOLOR=1
         export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+        eval "$(direnv hook zsh)"
     '';
 
     zplug = {
