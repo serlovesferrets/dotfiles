@@ -58,17 +58,30 @@ local python = {
 
 ls.add_snippets("python", python)
 
-local lua = {
-    s("lsp", {
+local nvim = {
+    s("add_lsp", {
         t("lspconfig."),
         i(1, "lsp_name"),
         t(".setup({"),
         t({ "", "    capabilities = capabilities" }),
         t({ "", "})" }),
     }),
+    s("add_formatter", {
+        t("conform.formatters_by_ft."),
+        i(1, "language"),
+        t(' = { "'),
+        i(2, "formatter"),
+        t('" }'),
+    }),
+    s("add_ft", {
+        t("vim.filetype.add({"),
+        t({ "", "   " }),
+        i(1),
+        t({ "", "})" }),
+    }),
 }
 
-ls.add_snippets("lua", lua)
+ls.add_snippets("lua", nvim)
 
 local js = {
     s("doc", {

@@ -4,11 +4,7 @@ return {
         quiet = true,
         formatters_by_ft = {
             lua = { "stylua" },
-            python = { "black" },
-            javascript = { "prettierd", "prettier" },
-            typescript = { "prettierd", "prettier" },
-            tex = { "latexindent" },
-            haskell = { "fourmolu" }
+            nix = { "nixd" },
         },
     },
     keys = {

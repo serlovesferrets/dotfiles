@@ -10,11 +10,6 @@ return {
         },
         dependencies = { "Bilal2453/luvit-meta", lazy = true },
     },
-    -- F#
-    {
-        "adelarsq/neofsharp.vim",
-        ft = "fsharp",
-    },
     -- LaTeX
     {
         "lervag/vimtex",
