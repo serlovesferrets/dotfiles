@@ -6,6 +6,9 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 lspconfig.lua_ls.setup({
     capabilities = capabilities,
     on_init = function(client)
+        if client.workspace_folders == nil then
+            return
+        end
         local path = client.workspace_folders[1].name
         if
             vim.loop.fs_stat(path .. "/.luarc.json")
@@ -23,7 +26,7 @@ lspconfig.lua_ls.setup({
                     checkThirdParty = false,
                     library = {
                         vim.env.VIMRUNTIME,
-                        "${3rd}/love2d/library",
+                        -- "${3rd}/love2d/library",
                         -- other libs
                     },
                 },
@@ -40,125 +43,5 @@ lspconfig.lua_ls.setup({
 
 -- Nix
 lspconfig.nixd.setup({
-    capabilities = capabilities,
-})
-
--- Python
-lspconfig.pyright.setup({
-    capabilities = capabilities,
-})
-
--- C / C++
-lspconfig.clangd.setup({
-    capabilities = capabilities,
-})
-
-lspconfig.cmake.setup({
-    capabilities = capabilities,
-})
-
-lspconfig.mesonlsp.setup({
-    capabilities = capabilities,
-    root_dir = lspconfig.util.root_pattern(
-        "meson_options.txt",
-        "meson.options",
-        ".git",
-        "meson.build"
-    ),
-})
-
--- Rust
-lspconfig.rust_analyzer.setup({
-    capabilities = capabilities,
-})
-
--- Haskell
-lspconfig.hls.setup({
-    capabilities = capabilities,
-    filetypes = { "haskell", "cabal" },
-})
-
--- OCaml
-lspconfig.ocamllsp.setup({
-    capabilities = capabilities,
-})
-
--- JavaScript / TypeScript
-lspconfig.tsserver.setup({
-    capabilities = capabilities,
-})
-
-lspconfig.eslint.setup({
-    capabilities = capabilities,
-})
-
--- Tailwind
-lspconfig.tailwindcss.setup({
-    capabilities = capabilities,
-    filetypes = {
-        "django-html",
-        "htmldjango",
-        "html",
-        "css",
-        "javascriptreact",
-        "typescriptreact",
-    },
-})
-
-local web_capabilities = vim.lsp.protocol.make_client_capabilities()
-web_capabilities.textDocument.completion.completionItem.snippetSupport = true
-
--- HTML
-lspconfig.html.setup({
-    capabilities = capabilities,
-})
-
--- CSS
-lspconfig.cssls.setup({
-    capabilities = web_capabilities,
-})
-
-local add_if_found = function(lsp_name, lsp_capabilities)
-    if lspconfig[lsp_name] ~= nil then
-        lspconfig[lsp_name].setup({
-            capabilities = lsp_capabilities,
-        })
-    end
-end
-
--- JSON
-add_if_found("jsonls", web_capabilities)
-
--- Java
-lspconfig.jdtls.setup({
-    capabilities = capabilities,
-})
-
--- Lean
-lspconfig.leanls.setup({
-    capabilities = capabilities,
-})
-
--- C#
-lspconfig.csharp_ls.setup({
-    capabilities = capabilities,
-})
-
-lspconfig.fsautocomplete.setup({
-    capabilities = capabilities
-})
-
--- Go
-lspconfig.gopls.setup({
-    capabilities = capabilities,
-})
-
--- LaTeX
-lspconfig.texlab.setup({
-    capabilities = capabilities,
-})
-
--- PHP
-lspconfig.phpactor.setup({
     capabilities = capabilities,
 })
