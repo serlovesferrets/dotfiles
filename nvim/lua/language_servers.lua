@@ -1,17 +1,16 @@
 local lspconfig = require("lspconfig")
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 -- Lua
 lspconfig.lua_ls.setup({
-    capabilities = capabilities,
     on_init = function(client)
         if client.workspace_folders == nil then
             return
         end
         local path = client.workspace_folders[1].name
         if
+            ---@diagnostic disable-next-line: undefined-field (fs_stat)
             vim.loop.fs_stat(path .. "/.luarc.json")
+            ---@diagnostic disable-next-line: undefined-field
             or vim.loop.fs_stat(path .. "/.luarc.jsonc")
         then
             return
@@ -26,22 +25,11 @@ lspconfig.lua_ls.setup({
                     checkThirdParty = false,
                     library = {
                         vim.env.VIMRUNTIME,
-                        -- "${3rd}/love2d/library",
-                        -- other libs
                     },
                 },
             })
     end,
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { "vim" },
-            },
-        },
-    },
 })
 
 -- Nix
-lspconfig.nixd.setup({
-    capabilities = capabilities,
-})
+lspconfig.nixd.setup({})
