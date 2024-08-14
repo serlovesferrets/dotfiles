@@ -47,26 +47,4 @@ return {
             "nvim-telescope/telescope.nvim",
         },
     },
-    {
-        "cljoly/telescope-repo.nvim",
-        config = function()
-            local repos = require("telescope").extensions.repo
-            vim.keymap.set("n", "<leader>fp", function()
-                repos.list({
-                    tail_path = true,
-                    search_dirs = {
-                        "~/dev/",
-                        "~/.config/",
-                        "/tmp",
-                    },
-                })
-            end, {
-                desc = "Find git repositories in your system",
-            })
-        end,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim",
-        },
-    },
 }

@@ -51,7 +51,17 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      gr = "cd $(find ~/dev ~/.config -type d -name \".git\" | sed 's/....$//' | fzf)";
+      # Home manager
+      hms = "home-manager switch";
+      hmb = "home-manager build";
+      # Git repos
+      gr = "cd $((find ~/dev ~/.config /tmp -type d -name \".git\" | sed 's/....$//' | fzf) || pwd)";
+      # Go to
+      gt = "cd $((find . -type d | fzf) || pwd)";
+      # Nvim
+      n = "nvim";
+      nt = "nvim +'Telescope git_files'";
+      nta = "nvim +'Telescope find_files'";
     };
 
     initExtra = ''
