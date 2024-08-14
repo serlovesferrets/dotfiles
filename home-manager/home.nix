@@ -15,6 +15,7 @@
     packages = with pkgs; [
       # Coding tools
       ripgrep
+      fzf
       fd
       gh
       neovim
@@ -49,11 +50,22 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    initExtra = ''
-        export CLICOLOR=1
-        export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+    shellAliases = {
+      gr = "cd $(find ~/dev ~/.config -type d -name \".git\" | sed 's/....$//' | fzf)";
+    };
 
-        eval "$(direnv hook zsh)"
+    initExtra = ''
+      export CLICOLOR=1
+      export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+      export FZF_DEFAULT_OPTS=" \
+        --color=fg:-1,fg+:#C1C0D6,bg:-1,bg+:#262626 \
+        --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+        --color=hl:#BAAFD2,hl+:#BAAFD2,info:#EFB799,marker:#84BA9D \
+        --color=border:#262626,label:#aeaeae,query:#C1C0D6 \
+        --color=selected-bg:#494d64 \
+        --multi"
+
+      eval "$(direnv hook zsh)"
     '';
 
     zplug = {
