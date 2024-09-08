@@ -21,7 +21,7 @@
     enable = true;
     settings = {
       palette = "mellow-lite";
-      palettes.foo = {
+      palettes.mellow-lite = {
         black = "#161617";
         red = "#FA7CA6";
         green = "#84BA9D";
