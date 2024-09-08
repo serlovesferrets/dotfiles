@@ -34,6 +34,7 @@ return {
                     ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
+                    { name = "nvim_lsp_signature_help" },
                     { name = "nvim_lsp" },
                     { name = "nvim_lua" },
                     { name = "luasnip" },
@@ -72,4 +73,5 @@ return {
     { "hrsh7th/cmp-cmdline" },
     { "hrsh7th/cmp-path" },
     { "saadparwaiz1/cmp_luasnip" },
+    { "hrsh7th/cmp-nvim-lsp-signature-help" },
 }

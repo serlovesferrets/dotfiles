@@ -6,8 +6,6 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- local theme = "catppuccin-mocha"
-
 local colors, _ = wezterm.color.load_scheme("/Users/ser/.config/wezterm/mellow.toml")
 
 colors.tab_bar = {
@@ -23,45 +21,16 @@ colors.tab_bar = {
 	},
 }
 
--- config.color_scheme = colors
 config.window_decorations = "RESIZE"
-
 config.colors = colors
 
--- config.colors = {
--- 	tab_bar = {
--- 		background = "#181826",
--- 		inactive_tab_hover = {
--- 			italic = true,
--- 			bg_color = "#181826",
--- 			fg_color = "#45475C",
--- 		},
--- 		inactive_tab = {
--- 			italic = true,
--- 			bg_color = "#1E1E2F",
--- 			fg_color = "#45475C",
--- 		},
--- 		active_tab = {
--- 			bg_color = "#1E1E2F",
--- 			fg_color = "#B2BEFF",
--- 		},
--- 		new_tab = {
--- 			bg_color = "#1E1E2F",
--- 			fg_color = "#45475C",
--- 		},
--- 		new_tab_hover = {
--- 			bg_color = "#181827",
--- 			fg_color = "#45475C",
--- 		},
--- 	},
--- }
-
 config.line_height = 1.05
+
 config.window_padding = {
-	left = 20,
-	right = 20,
-	top = 20,
-	bottom = 10,
+	left = 15,
+	right = 15,
+	top = 15,
+	bottom = 5,
 }
 
 config.keys = {
@@ -72,11 +41,9 @@ config.keys = {
 	},
 }
 
-config.font = wezterm.font("CaskaydiaCove Nerd Font", {
-	weight = "DemiLight",
-})
+config.font = wezterm.font("JetBrains Mono")
 config.font_size = 14
-config.harfbuzz_features = { "ss19" }
+config.harfbuzz_features = { "ss02", "ss19", "cv14", "cv16", "cv18", "cv08" }
 
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
