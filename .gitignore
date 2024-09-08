@@ -9,3 +9,4 @@ cabal
 raycast
 composer
 direnv
+starship.toml
