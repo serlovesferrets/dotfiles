@@ -24,11 +24,8 @@
       zsh
       pure-prompt
 
-      # .NET
-      csharp-ls
-
-      # My favorite font
-      cascadia-code
+      # My (current) favorite font
+      jetbrains-mono
 
       ## Nix
       nixd
@@ -45,7 +42,7 @@
   };
 
   programs.zsh = {
-    enable = true;
+    enable = false;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -58,13 +55,22 @@
       gr = "cd $((find ~/dev ~/.config /tmp -type d -name \".git\" | sed 's/....$//' | fzf) || pwd)";
       # Go to
       gt = "cd $((find . -type d | fzf) || pwd)";
+      # mkdir + cd
+      ccd = "mkdir-and-cd";
       # Nvim
       n = "nvim";
       nt = "nvim +'Telescope git_files'";
       nta = "nvim +'Telescope find_files'";
+      ngr = "gr && nt";
     };
 
     initExtra = ''
+      bindkey '^R' history-incremental-search-backward
+
+      mkdir-and-cd() {
+          mkdir -p "$@" && cd "$@"
+      }
+
       export CLICOLOR=1
       export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
       export FZF_DEFAULT_OPTS=" \
@@ -86,6 +92,13 @@
       ];
     };
 
+  };
+
+  programs.direnv = {
+    enable = true;
+    silent = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
   };
 
   programs.home-manager.enable = true;

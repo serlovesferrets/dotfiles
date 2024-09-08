@@ -23,35 +23,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end,
 })
 
-local info_ft_group =
-    vim.api.nvim_create_augroup("no_cc_group", { clear = true })
-
-local info_fts = {
-    "*.md*",
-    "*.txt",
-    -- "*.tex",
-}
-
-vim.api.nvim_create_autocmd("BufEnter", {
-    group = info_ft_group,
-    pattern = info_fts,
-    callback = function()
-        vim.wo.colorcolumn = "0"
-        vim.wo.wrap = true
-        vim.wo.linebreak = true
-    end,
-})
-
-vim.api.nvim_create_autocmd("BufLeave", {
-    group = info_ft_group,
-    pattern = info_fts,
-    callback = function()
-        vim.wo.colorcolumn = "80"
-        vim.wo.wrap = false
-        vim.wo.linebreak = false
-    end,
-})
-
 -- Thanks u/echasnovski on reddit
 local root_names = { ".git" }
 local root_cache = {}
@@ -80,3 +51,36 @@ end
 
 local root_augroup = vim.api.nvim_create_augroup("AutoRoot", {})
 vim.api.nvim_create_autocmd("BufEnter", { callback = set_root })
+
+-- Stolen from 
+-- https://stackoverflow.com/questions/75963628/how-to-add-an-empty-space-in-the-neovim-at-the-bottom-of-the-buffer-when-using-t
+-- tysm!!
+vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+  callback = function()
+
+    -- normal buffer (not terminal or prompt)
+    if vim.bo.buftype ~= "" then
+      return
+    end
+
+    local windowLines = vim.api.nvim_win_get_height(0)
+    local currLine = vim.fn.line(".")
+    local lastLine = vim.fn.line("$")
+
+    -- to handle a file smaller than window
+    local bottom = 0
+    if windowLines > lastLine then
+      bottom = windowLines
+    else
+      bottom = lastLine
+    end
+
+    local marginBottom = currLine + vim.o.scrolloff - bottom
+    if marginBottom == 0 then
+      vim.api.nvim_input("zb")                    -- align cursor with bottom of file
+    elseif marginBottom > 0 then
+      vim.api.nvim_input("zb")                    -- align cursor with bottom of file
+      vim.api.nvim_input(marginBottom .. "<C-E>") -- scroll down
+    end
+  end,
+})

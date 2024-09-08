@@ -1,0 +1,6 @@
+[submodule "nvim/lua/language_plugins"]
+	path = nvim/lua/language_plugins
+	url = git@github.com:serlovesferrets/nvim-language-plugins.git
+[submodule "nvim/lua/snippets"]
+	path = nvim/lua/snippets
+	url = git@github.com:serlovesferrets/nvim-snippets.git
