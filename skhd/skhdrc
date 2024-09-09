@@ -11,13 +11,13 @@ alt + shift - l : yabai -m window --swap east
 alt + shift - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 alt + shift - m : yabai -m window --toggle zoom-fullscreen 
 
-# Chat
+# Chat / Reading: mutually exclusive
 alt - 1 : yabai -m space --focus 1
 
 # Terminal
 alt - 2 : yabai -m space --focus 2
 
-# Web
+# Browser
 alt - 3 : yabai -m space --focus 3
 
 # Rest
