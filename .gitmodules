@@ -6,3 +6,6 @@
 	path = nvim/lua/snippets
 	url = git@github.com:serlovesferrets/nvim-snippets.git
     ignore = untracked
+[submodule "nvim/treesitter-nvim-queries"]
+	path = nvim/queries
+	url = https://github.com/serlovesferrets/treesitter-nvim-queries.git
