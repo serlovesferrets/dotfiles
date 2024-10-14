@@ -16,6 +16,13 @@
     file = { };
     sessionVariables = { EDITOR = "nvim"; };
   };
+  programs.git = {
+    enable = true;
+    ignores = [
+      ".DS_Store"
+      ".direnv"
+    ];
+  };
 
   programs.starship = {
     enable = true;

@@ -53,7 +53,11 @@ alias nt="nvim +'Telescope git_files'";
 alias nta="nvim +'Telescope find_files'";
 alias ngr="gr && nt";
 
-bindkey '^R' history-incremental-search-backward
+bindkey '^r' history-incremental-search-backward
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 zplug load
 
