@@ -45,9 +45,3 @@ vim.opt.wrap = false
 
 -- exrc for local settings
 vim.o.exrc = true
-
--- I use a plugin for inline errors
-vim.diagnostic.config({
-  virtual_text = false,
-  virtual_lines = { only_current_line = true }
-})

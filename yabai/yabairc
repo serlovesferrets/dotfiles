@@ -8,7 +8,7 @@ yabai -m rule --add app=Finder manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
 yabai -m rule --add title="Preferences" manage=off
-yabai -m rule --add title="^Telegram$" manage=off
+yabai -m rule --add app="^Telegram$" manage=off
 yabai -m rule --add app="^Discord$" manage=off
 yabai -m rule --add title="^WhatsApp$" manage=off
 yabai -m rule --add app="^Anki$" title="Browse" manage=off

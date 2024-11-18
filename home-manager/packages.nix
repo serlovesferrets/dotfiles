@@ -2,6 +2,7 @@
 
 with pkgs; let
   codingTools = [
+    devenv
     ripgrep
     fzf
     fd

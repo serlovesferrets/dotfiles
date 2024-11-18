@@ -6,12 +6,19 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 local indent_size_spaces_fts = {
+    "*.nix",
+    "*.scm",
     "*.ml",
     "*.mli",
+    "*.json",
     "*.jsx",
     "*.tsx",
     "*.config.js",
     "*.config.ts",
+    "*.md",
+    "*.typ",
+    "*.cabal",
+    "*.dart",
 }
 
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -51,3 +58,9 @@ end
 
 local root_augroup = vim.api.nvim_create_augroup("AutoRoot", {})
 vim.api.nvim_create_autocmd("BufEnter", { callback = set_root })
+
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+    pattern = { "*.rs" },
+    command = "silent w",
+    nested = true,
+})
