@@ -63,3 +63,5 @@ zplug load
 
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
+export GODOT="/Users/ser/Library/Application Support/godotenv/godot/bin/godot"
+export PATH="/Users/ser/Library/Application Support/godotenv/godot/bin:$PATH"

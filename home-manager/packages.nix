@@ -36,5 +36,18 @@ with pkgs; let
     lua-language-server
     stylua
   ];
+
+  macos = [
+    pkg-config
+    skhd
+    yabai
+  ];
 in
-codingTools ++ shellStuff ++ outsideNix ++ fonts ++ nixUtils ++ nvimStuff
+
+codingTools
+  ++ shellStuff 
+  ++ outsideNix 
+  ++ fonts 
+  ++ nixUtils 
+  ++ nvimStuff 
+  ++ macos
