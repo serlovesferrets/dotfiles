@@ -6,7 +6,6 @@ vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80"
 
 -- use gui colors
-vim.opt.termguicolors = true
 vim.o.termguicolors = true
 
 -- prettier search
@@ -29,6 +28,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.o.autoindent = true
 
 -- default split on right
 vim.opt.splitright = true
@@ -45,3 +45,10 @@ vim.opt.wrap = false
 
 -- exrc for local settings
 vim.o.exrc = true
+
+-- Visual mode remaps
+vim.keymap.set("v", "<C-p>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<C-n>", ":m '>+1<CR>gv=gv")
+
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
