@@ -19,7 +19,7 @@ return {
             view_options = {
                 show_hidden = false,
                 is_hidden_file = function(name, _)
-                    return vim.startswith(name, ".") or name == "result"
+                    return name == ".DS_Store" or name == "result"
                 end,
             },
         })
